@@ -1,0 +1,160 @@
+/* ---------- Design tokens ---------- */
+:root {
+  /* Colors */
+  --color-bg: #212121;
+  --color-surface: #151515;
+  --color-card: rgb(25, 25, 25);
+  --color-text: #25ffaf;
+  --color-link: #81ffcf;
+  --color-link-hover: #8dffd5;
+  --color-border-pfp: #333;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+
+  /* Typography */
+  --font-main: "Josefin Sans", sans-serif;
+  --weight-regular: 400;
+  --weight-bold: 600;
+
+  /* Spacing */
+  --space-sm: 1rem;
+  --space-lg: 2rem;
+  --gutter: 24px;
+
+  /* Shape */
+  --radius: 1rem;
+  --shadow: 0 0 2rem var(--color-shadow);
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-weight: var(--weight-regular);
+}
+
+h1,
+.contact-line {
+  margin: 0;
+  font-weight: var(--weight-bold);
+}
+
+h2 {
+  margin: var(--space-lg) 0 var(--space-sm) var(--space-sm);
+  font-weight: var(--weight-regular);
+  text-decoration: underline;
+}
+
+p {
+  margin: var(--space-sm) 0 var(--space-sm) var(--space-sm);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/* ---------- Header & footer ---------- */
+header,
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  width: 100%;
+  margin: 0;
+  padding: var(--space-sm) var(--gutter);
+  background-color: var(--color-surface);
+}
+
+footer {
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  gap: var(--space-sm);
+  margin-left: auto;
+}
+
+/* ---------- Profile picture ---------- */
+.pfpc {
+  float: right;
+  margin: var(--space-sm);
+}
+
+.pfp {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  border: 4px solid var(--color-border-pfp);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Main content ---------- */
+main {
+  max-width: 960px;
+  margin: 0;
+  padding: var(--gutter);
+}
+
+/* ---------- Project cards ---------- */
+#grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  width: 100%;
+  margin: var(--space-sm);
+  padding: var(--space-sm);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: var(--space-sm);
+  background: var(--color-card);
+  border: 0.125rem solid;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  margin: 0;
+  font-weight: var(--weight-regular);
+  text-decoration: underline;
+}
+
+.card p {
+  margin: var(--space-sm) 0;
+}
+
+.card a {
+  margin-top: auto;
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 700px) {
+  #grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  #grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
